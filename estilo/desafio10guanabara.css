@@ -1,0 +1,264 @@
+@charset "UTF-8"; /*Define padrão de comunicação c/ os navegadores*/ 
+
+/*Adiciona definições da fonte Bebas pelo link do Google fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*Adiciona definições da fonte Bebas pelo arquivo otf baixado*/
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format(opentype);
+    font-weight: normal;
+}
+/*Estabelece variáveis com cores e fontes definidas*/
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+/*Estabelece gobalmente que...*/
+*{
+    margin: 0px; /*margem tem 0 pixels*/
+    padding: 0px; /*preenchimento tem 0 pixels*/
+}
+
+body{
+    background-color: var(--cor0); /*Adiciona dor de fundo ao site*/
+    font-family: var(--fonte-padrao); /*Define fonte padrão (ver :root), 
+                                        aos elementos sem definição de fonte*/
+}
+
+/*Adiciona emoji de espaço + cadeado depois dos links de classe externo*/
+a.externo::after {
+    content: '\00a0\1F517';
+}
+
+/*Definições para o cabelçalho...*/
+header{
+    background-image: linear-gradient(to bottom, 
+    var(--cor3), var(--cor5)); /*Define um gradiente, do topo ao fundo,
+                                    nas cores 3 a 5 (ver :root)*/
+    min-height: 150px; /*Define altura 150 pixels para o cabeçalho*/
+    text-align: center; /*Alinhas no centro os textos do cabeçalho*/
+    padding-top: 40px; /*Define um espaçamento de 40 pixels no topo do cabeçalho*/
+}
+
+/*Definições para os textos H1 que estão no cabeçalho... */
+header > h1 {
+    color: white; /*Cor branca*/
+    font-family: var(--fonte-destaque); /*Define font-destaque como fonte (ver :root)*/
+    font-size: 3em; /*Multiplica o tamanho padrão vezes 3*/
+    font-weight: normal; /*Define o peso como normal*/
+    margin-bottom: 20px; /*Define um espaçamento de 40 pixels no fundo do texto*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.37); /*Define uma sombra no texto c/
+                                                    2 pixels de espaçamento horizontal,
+                                                    2 pixels de espaçamento vertical,
+                                                    0 pixels de espalhamento,
+                                                    e 0.37 de transparência.*/
+}
+
+/*Definições para os paragrafos do cabeçalho...*/
+header > p {
+    font-family: var(--fonte-padrao); /*Fonte como fonte-padrão (ver :root)*/
+    font-size: 1.2em; /*Tamanho da fonte em 1.2 vezes maior que o tamanho padrão*/
+    color: white; /*Cor branca*/
+    max-width: 500px; /*largura máxima de 500 pixels*/
+    padding-right: 10px; /*10 pixels de espaçamento a direita*/
+    padding-left: 10px; /*10 pixels de espaçamento a esquerda*/
+    margin: auto; /*Margem automática centraliza e ajusta o 
+                    parágrafo para caber na página*/
+    margin-bottom: 20px; /*20 pixel de margem no fundo do parágrafo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.37); /*Define uma sombra no texto c/
+                                                    2 pixels de espaçamento horizontal,
+                                                    2 pixels de espaçamento vertical,
+                                                    0 pixels de espalhamento,
+                                                    e 0.37 de transparência*/
+}
+
+/*Definições para a seção de navegações...*/
+nav{
+    background-color: var(--cor5); /*Define a cor do fundo (ver :root)*/
+    padding: 10px; /*Espaçamento de 10 pixels ao redor da seção*/
+    box-shadow: 0px 7px 7px rgba(0,0,0,0.315);/*Sombreamento apenas embaixo 
+                                                    da naegação com
+                                                0px de espaçamento horizontal,
+                                                7px de espaçamento vertical,
+                                                7px de espalhamento,
+                                                e 0.315 de transparência*/
+}
+
+/*Definições para os links da seção de navegação*/
+nav > a {
+    color: var(--cor1); /*cor1 do texto (ver :root)*/
+    padding: 10px; /*Expaçamento de 10px para os blocos de link*/
+    border-radius: 5px; /*Raio de borda de 5px para os blocks de link*/
+    text-decoration: none; /*Tira toda a decoração do texto*/
+    font-weight: bold; /*Texto do bloco em negrito*/
+    transition-duration: 0.5s; /*duração de 0.5 segundo da transição entre
+                                o estilo com e sem o mouse em cima*/
+}
+ /*Definições para quando passar o mouse sobre link da seção de navegaçaõ*/
+nav > a:hover{
+    background-color: var(--cor3); /*O bloco fica cor3 (ver :root)*/
+    color: var(--cor5); /*O texto fica cor5 (ver :root)*/
+}
+
+ /*Define o conteúdo principal com...*/
+main{
+    min-width: 300px; /*Largura minima de 300px*/
+    max-width: 1000px; /*Largura máxima de 1000px*/
+    margin: auto; /*Centraliza o main no centro da tela*/
+    margin-bottom: 30px; /*Defini 30px de distância do fundo do main em 
+                            relação ao rodapé logo abaixo*/
+    padding: 20px; /*Adiciona um preenchimento de 20px ao redor do main*/
+    background-color: white; /*Defini a cor branca para o fundo do main*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.466); /*Defini uma sombra no main de
+                                                        0px de espaçamento horizontal,
+                                                        0px de espaçamento vertical,
+                                                        0px de espalhamento,
+                                                        e 0.466 de transparência*/
+    border-bottom-left-radius: 10px; /*Adiciona um borda arredondada no 
+                                        canto inferior esquerdo de 10px */
+    border-bottom-right-radius: 10px; /*Adiciona um borda arredondada no 
+                                        canto inferior direito de 10px */
+}
+ /*Define os textos h1 do contúdo principal com...*/
+main h1 {
+    color: var(--cor5); /*a cor --cor5 para o texto (ver :root)*/
+    font-family: var(--fonte-android); /*a fonte --fonte-android (ver :root)*/
+    font-weight: normal; /*o peso do texto como normal*/
+    font-size: 1.8em; /*o tamanho do texto com 1.8 vezes o tamanho padrão*/
+}
+
+ /*Define os textos h2 do contúdo principal com...*/
+main h2{
+    font-family: var(--fonte-android); /*a fonte --fonte-android (ver :root)*/
+    color: var(--cor4); /*a cor --cor4 para o texto (ver :root)*/
+    font-size: 1.3em; /*o tamanho do texto com 1.3 vezes o tamanho padrão*/
+    font-weight: normal; /*o peso do texto como normal*/
+    background-image: linear-gradient(to right, var(--cor1), 
+    transparent); /*Faz um gradiente da
+                    cor padrão para a --cor1*/
+    text-indent: 8px; /*avanço no texto, estilo TAB, de 8px*/
+
+}
+
+ /*Define os textos p do contúdo principal com...*/
+main p {
+    margin: 15px 0px; /*margem superior e inferior de 15px, laterais de 0px*/
+    text-align: justify; /*texto justificado*/
+    text-indent: 30px; /*avanço no texto, estilo TAB, de 30px */
+    font-size: 1em; /*tamanho de texto 1 vez o tamanho padrão*/
+    line-height: 2em; /*altura entre linhas de 2 vezes o tamanho padrão*/
+}
+
+ /*Define os textos do main envelopados com strong com...*/
+main strong{
+    color: var(--cor4); /*Cor --cor4 (ver :root)*/
+    font-weight: bold; /*peso do texto negrito*/
+    padding: 2px 6px; /*preenchimento superior e inferior de 2px
+                        e lateral de 6px*/
+}
+
+ /*Define os links do mais com...*/
+main a {
+    text-decoration: none; /*sem qualquer decoração do texto do link*/
+    font-weight: bold; /*peso negrito no texto do link*/
+    color: var(--cor5); /*cor --cor5 (ver :root), para o texto*/
+    background-color: var(--cor1); /*com --cor1 (ver :root), 
+                                    para o fundo do bloco*/
+    padding: 2px 6px; /*preenchimento superior e inferior de 2px
+                        e lateral de 6px*/
+}
+
+ /*Define os links do main quando passa o mouse sobre eles */
+main a:hover {
+    text-decoration: underline; /*decora com sublinhado*/
+    color: var(--cor4); /*cor --cor4 (ver :root), no texto*/
+}
+
+ /*Define as imagens do main com...*/
+main img{
+    width: 100%; /*largura de 100% do tamanho da página*/
+}
+
+/*Define as imagens com class 'pequena' do main com...*/
+main img.pequena{
+    max-width: 350px; /*largura máxima da imagens de 350px*/
+    display: block; /*imagens transformadas em bloco para...*/
+    margin: auto;   /*...habilitar a centralização na página*/
+}
+
+ /*Define o bloco do vídeo com...*/
+div.video {
+    background-color: var(--cor5); /*cor --cor5 (ver :root), para o fundo*/
+    margin: 0px -20px 30px -20px; /*margem para fazer o encaxe na */
+    padding: 10px; /*Define um preenchimento de 10px para eliminar a 
+                        borda preta que fica no player*/
+    padding-bottom: 59%; /*É preciso definir uma porcentagem de
+                            preenchimento para que o vídeo tenha altura*/
+    position: relative; /*Posicionar o bloco do video dentro da estrutura 
+                            main de forma contextualizada*/
+}
+ /*Define o iframe com...*/
+div.video > iframe {
+    position: absolute; /*posicionamento dentro do pai 'position: relative;'*/
+    top: 5%; /*a distância do topo do pai 'position: relative;' em 5%*/
+    left: 5%; /*a distância da esquerda do pai 'position: relative;' em 5%*/
+    width: 90%; /*a largura do video em relação ao do pai 
+                    'position: relative;' em 90%*/
+    height: 90%; /*a altura do video em relação ao do pai 
+                    'position: relative;' em 90%*/
+}
+
+ /*Define o bloco a parte (aside), com...*/
+aside {
+    background-color: var(--cor1); /*cor de fundo --cor1 (ver :root)*/
+    padding: 10px; /*preenchimento total de 10px*/
+    border-radius: 10px; /*arredondamento de borda de 10px*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281); /*sombreamento de 
+                                                        3px de espaçamento horizontal,
+                                                        4px de espaçamento vertical,
+                                                        8px de espalhamento,
+                                                        e 0.281 de transparência*/
+}
+
+ /*Define o h3 do bloco a parte (aside), com...*/
+aside > h3 {
+    background-color: var(--cor4); /*cor de fundo --cor4 (ver :root)*/
+    color: white; /*cor de texto branco*/
+    padding: 10px; /*preenchimento total de 10px*/
+    margin: -10px -10px 0px -10px; /*margem para fazer encaixe no fundo mais claro*/
+    border-radius: 10px 10px 0px 0px; /*borda só na parte superior esquerda e direita*/
+}
+
+ /*Define como sela a lista do a parte (aside), com...*/
+aside > ul {
+    list-style-type: '\2714\00a0\00a0'; /*marcador "check" e dois espaços*/
+    list-style-position: inside; /*taz os marcadores para dentro do aside*/
+    columns: 2; /*duas coluna de listas*/
+}
+
+ /*Define o rodapé com...*/
+footer{
+    background-color: var(--cor5); /*cor de fundo --cor5 (ver :root)*/
+    color: white; /*cor de texto branco*/
+    text-align: center; /*alinhamento de texto centralizado*/
+    font-size: 0.8em; /*tamanho da font 0.8 vezes o tamanho padrão*/
+    padding: 5px; /*preenchimento do bloco de rodapé de 5px para todos os lados*/
+}
+
+ /*Define os links dos parágrafos com...*/
+footer > p > a {
+    color: white; /*cor de teto branca*/
+    font-weight: bolder; /*peso de texto bem negrito*/
+    text-decoration: none; /*tira todas as decorações de link*/
+    color: var(--cor1); /*cor de texto --cor1 (ver :root)*/
+}
