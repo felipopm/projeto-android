@@ -74,7 +74,7 @@ header > p {
     padding-left: 10px; /*10 pixels de espaçamento a esquerda*/
     margin: auto; /*Margem automática centraliza e ajusta o 
                     parágrafo para caber na página*/
-    margin-bottom: 20px; /*20 pixel de margem no fundo do parágrafo*/
+    padding-bottom: 50px; /*20 pixel de margem no fundo do parágrafo*/
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.37); /*Define uma sombra no texto c/
                                                     2 pixels de espaçamento horizontal,
                                                     2 pixels de espaçamento vertical,
